@@ -1,6 +1,7 @@
 import React from 'react';
 import './global.css';
-import Login from './pages/Login';
+
+import Routes from './routes';
 
 //jsx javascript e xml (html escrito dentro do js)
 
@@ -9,7 +10,7 @@ import Login from './pages/Login';
 function App() {
 
   return (
-    <Login />
+    <Routes />
   );
 }
 
