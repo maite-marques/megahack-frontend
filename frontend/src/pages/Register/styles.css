@@ -21,23 +21,23 @@
     align-items: center; 
 }
 
-.register-container .content form{
+.register-container .content #unFormDiv{
     width: 50%;
 }
 
-.register-container .content form .grupoCPF {
+.register-container .content #unFormDiv .grupoCPF {
     display: flex;
 }
 
-.register-container .content form .grupoCPF input + input {
+.register-container .content #unFormDiv .grupoCPF input + input {
     margin-left: 1px;
 }
 
-.register-container .content form .input-radio { 
+.register-container .content #unFormDiv .input-radio { 
     padding: 10px;
 }
 
-.register-container .content form #perfil { 
+.register-container .content #unFormDiv #perfil { 
     border-radius: 50%;
     width: 18px;
     height: 18px;
@@ -49,11 +49,11 @@
     margin: 10px;
 }
 
-.register-container .content form #perfil:checked{
+.register-container .content #unFormDiv #perfil:checked{
     border: 6px solid #0A244A;
 }
 
-.register-container .content form label { 
+.register-container .content #unFormDiv label { 
     font-size: 16px;
     color: #737380;
 }

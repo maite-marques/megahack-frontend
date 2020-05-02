@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import InputUnForm from '../../components/InputUnForm'
+import Input from '../../components/Input'
 
 import './styles.css';
 import logoImg from '../../assets/logo.png';
 import { Component } from 'react';
+import { Form } from '@unform/core';
 
 class Register extends Component {
+    handleSubmit = (data) => {
+        alert('TESTE')
+    };
+
 
     render() {
         return (
@@ -22,30 +27,29 @@ class Register extends Component {
                         Não tenho cadastro
                     </Link>
                     </section>
+                    <div id="unFormDiv">
+                        <Form onSubmit={this.handleSubmit}>
+                            <Input name="nome" type="text" placeholder="Primeiro Nome"/>
+                            <Input name="sobrenome" type="text" placeholder="Sobrenome"/>
+                            <div className="grupoCPF">
+                                <Input name="cpf" type="text" placeholder="CPF" required />
+                                <Input name="data" type="date" style={{ width: 260 }} />
+                            </div>
+                            <Input name="rg" type="text" placeholder="RG"/>
+                            <Input name="email" type="email" placeholder="E-mail" required/>
 
-                    <form>
-                        <input placeholder="Primeiro Nome" required></input>
-                        <input placeholder="Sobrenome"></input>
-                        <div className="grupoCPF">
-                            <input placeholder="CPF" required />
-                            <input type="date" style={{ width: 260 }} />
-                        </div>
-                        <input placeholder="RG"></input>
-                        {/* <input placeholder="Endereço"></input> */}
-                        {/* <input type="tel" placeholder="(    ) "></input> */}
-                        <input type="email" placeholder="E-mail" required></input>
+                            <div className="input-radio">
+                                <input type="radio" id="perfil" name="perfil" value="participante" checked></input>
+                                <label for="participante">Participante</label>
+                                <input type="radio" id="perfil" name="perfil" value="palestrante" ></input>
+                                <label for="palestrante">Palestrante</label>
+                                <input type="radio" id="perfil" name="perfil" value="organizador" ></input>
+                                <label for="organizador">Organizador</label>
+                            </div>
 
-                        <div className="input-radio">
-                            <input type="radio" id="perfil" name="perfil" value="participante" checked></input>
-                            <label for="participante">Participante</label>
-                            <input type="radio" id="perfil" name="perfil" value="palestrante" ></input>
-                            <label for="palestrante">Palestrante</label>
-                            <input type="radio" id="perfil" name="perfil" value="organizador" ></input>
-                            <label for="organizador">Organizador</label>
-                        </div>
-
-                        <button className="button" type="submit">Cadastrar</button>
-                    </form>
+                            <button className="button" type="submit">Cadastrar</button>
+                        </Form>
+                    </div>
                 </div>
             </div>
         );
