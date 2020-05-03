@@ -22,7 +22,7 @@ export default function Register() {
         },
         onSubmit: values => {
             const json = JSON.stringify(values, null, 2);
-            Axios.post(`http://localhost:8080/api/pessoa`, json, {
+            Axios.post(`${url_back}/api/pessoa`, json, {
                 headers: { "Content-Type": "application/json" }
             }).then(
                 (resp) => {
